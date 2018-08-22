@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Wistia:</strong>
-  <%= @video.wistia %>
-</p>
+<ul>
+  <% @videos.each do |video| %>
+    <li>
+      <a href="<%= video_path(video) %>"><%= video.title %></a>
+    </li>>
+  <% end %>
+</ul>
 
 <p>
-  <strong>Description:</strong>
   <%= @video.description %>
+  <%= link_to 'Prev', video_path(@video.prev) unless @video.prev.nil? %>
+  <%= link_to 'Next', video_path(@video.next) unless @video.next.nil? %>
 </p>
 
 <%= link_to 'Edit', edit_video_path(@video) %> |

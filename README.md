@@ -1,2 +1,1 @@
-# Umedi 
-Functional clone 
+# Functional analog of Umedi 
